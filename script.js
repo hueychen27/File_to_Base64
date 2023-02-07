@@ -6,7 +6,7 @@ document.getElementById("file").addEventListener('change', (e) => {
 	reader.readAsDataURL(file);
 	reader.onloadend = () => {
 		console.log(reader.result);
-		document.getElementById("result").innerText = reader.result;
+		document.getElementById("result").value = reader.result;
 		if (fileElement.type.includes("image")) {
 			const el = `<object data="${reader.result}" type="${fileElement.type}"></object>`;
 			container.innerHTML = el;
